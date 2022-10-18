@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  .styled_text {
+    font-weight: bold;
+    font-style: italic;
+    color: #4fa9b7;
+}
+
+.styled_text_warn {
+    font-weight: bold;
+    font-style: italic;
+    color: #ff0000;
+}
+
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    width: 200px;
+}

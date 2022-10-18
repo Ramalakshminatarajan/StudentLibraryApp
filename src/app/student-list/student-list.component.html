@@ -1,0 +1,61 @@
+
+<mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="RollNo">
+        <th mat-header-cell *matHeaderCellDef > ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.rollNo}} </td>
+      </ng-container>
+  
+      <!-- Department Column -->
+      <ng-container matColumnDef="Department">
+        <th mat-header-cell *matHeaderCellDef > Department </th>
+        <td mat-cell *matCellDef="let row"> {{row.department}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      </ng-container>
+  
+      <!-- Due Column -->
+      <ng-container matColumnDef="AmountDue">
+        <th mat-header-cell *matHeaderCellDef > Due </th>
+        <td mat-cell *matCellDef="let row"> 
+            <ng-container *ngIf="row.amountDue > 300">
+                <span class="styled_text_warn">Rs.{{row.amountDue}}</span>
+            </ng-container>
+            <ng-container *ngIf="row.amountDue < 300 && row.amountDue > 0">Rs.{{row.amountDue}}</ng-container>
+            <ng-container *ngIf="row.amountDue == 0" >No Dues </ng-container>
+        </td>
+      </ng-container>
+
+       <!-- Action Column -->
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let row"> 
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+      </ng-container>
+    
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" data-test-id="No Data" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
