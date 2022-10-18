@@ -25,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+AppFeatures:
+
+BookListComponent
+    1.Able to view all availabe Books in library
+    2.Able to Search books from all available books
+
+MemberListComponent
+    1.Able to view all members of library
+    2.Able to Search members.
+
+Angular Features:
+
+MatTable
+Paginator
+Observable and Async Pipes
+MatCard with FlexLayout.
