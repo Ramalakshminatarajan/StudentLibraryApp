@@ -55,7 +55,15 @@
       <tr class="mat-row" *matNoDataRow>
         <td class="mat-cell" data-test-id="No Data" colspan="4">No data matching the filter "{{input.value}}"</td>
       </tr>
+
     </table>
-  
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
   </div>
+  <button mat-fab color="primary" (click)="clickAdd()"
+          class="menu-button"
+          [class.mat-elevation-z2]="!isOver"
+          [class.mat-elevation-z8]="isOver"
+          (mouseover)="isOver = true"
+          (mouseleave)="isOver = false">
+          <i class="material-icons">add</i>
+  </button>

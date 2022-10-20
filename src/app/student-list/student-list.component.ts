@@ -13,6 +13,7 @@ import {StudentList} from "../test-data/StudentList";
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements AfterViewInit {
+  isOver = false;
 
   displayedColumns: string[] = ['RollNo', 'Name', 'Department', 'AmountDue','Action'];
   dataSource: MatTableDataSource<StudentData>;
@@ -29,6 +30,11 @@ export class StudentListComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+  }
+
+  clickAdd(){
+    //this.openMenu = !this.openMenu;
+    console.log("Added");
   }
 
   applyFilter(event: Event) {

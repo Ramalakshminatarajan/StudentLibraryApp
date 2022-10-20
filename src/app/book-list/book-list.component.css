@@ -30,3 +30,9 @@ table {
 .content > mat-card {
     width: 200px;
 }
+
+.menu-button{
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}

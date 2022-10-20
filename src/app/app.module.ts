@@ -14,17 +14,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,  ReactiveFormsModule} from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
 import { BookListComponent } from './book-list/book-list.component';
+import { NewBookFormComponent } from './new-book-form/new-book-form.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
-    BookListComponent
+    BookListComponent,
+    NewBookFormComponent
   ],
   imports: [
     BrowserModule,
@@ -35,11 +38,13 @@ import { BookListComponent } from './book-list/book-list.component';
     MatButtonModule,
     MatTableModule,
     FormsModule,
+    ReactiveFormsModule,
     MatPaginatorModule,
     MatInputModule,
     MatSortModule,
     MatCardModule,
-    FlexLayoutModule 
+    FlexLayoutModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
